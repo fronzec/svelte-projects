@@ -1,14 +1,26 @@
 <script>
 	import About from "./components/About.svelte";
+	import Text from "./components/Text.svelte";
+	import Person from "./components/Person.svelte";
+
 	export let name;
 	export let lastName;
 	let svelteLogo = 'https://arepa.s3.amazonaws.com/svelte-logo.png';
 
+	const data = {
+		name: "Eduardo",
+		lastName: "Flores",
+		age: 29
+	}
 </script>
 
 <main>
 	<h1>Hello {name} {lastName}!</h1>
 	<About/>
+	<Text anotherText="Hola!"/>
+	<Text/>
+	<Person name={data.name} lastName={data.lastName} age="{data.age}"/>
+	<Person {...data}/>
 	<img src="{svelteLogo}" alt="Svelte">
 </main>
 
