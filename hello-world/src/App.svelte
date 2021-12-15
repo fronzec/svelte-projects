@@ -33,7 +33,14 @@
 
 	/*global variables*/
 	:global(:root) {
-		--theme-color: purple;
+		--theme-color: #777;
+	}
+
+	:global(body.dark-mode) {
+		background-color: #1d3040;
+		color: #bfc2c7;
+		transition: background-color 300ms, color 300ms;
+		--theme-color: #bfc2c7;
 	}
 
 	/*applying global variable*/

@@ -1,6 +1,12 @@
 <script>
     let someText = 'SWE at Mercado Libre';
     let count = 0;
+    let styles = {darkMode: false}
+
+    function toogle() {
+        styles.darkMode = !styles.darkMode;
+        window.document.body.classList.toggle("dark-mode");
+    }
 
     function handleClick() {
         count += 1;
@@ -19,7 +25,12 @@
 </style>
 
 <div class="About">
-    <p>{someText}</p>
+    {#if !styles.darkMode}
+        <p>{someText}</p>
+    {:else}
+        <p>Hello DarkMode!</p>
+    {/if}
     <button on:click={handleClick}>Click {count === 0 ? '' : count}</button>
     <button on:click={resetCounter}>Reset</button>
+    <button on:click={toogle}>DarkMode</button>
 </div>
