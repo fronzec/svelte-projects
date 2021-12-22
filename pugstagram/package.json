@@ -7,5 +7,18 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Eduardo Flores",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "svelte": "^3.44.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.5",
+    "@babel/polyfill": "^7.12.1",
+    "@babel/preset-env": "^7.16.5",
+    "babel-loader": "^8.2.3",
+    "html-webpack-plugin": "^5.5.0",
+    "svelte-loader": "^3.1.2",
+    "webpack": "^5.65.0",
+    "webpack-cli": "^4.9.1"
+  }
 }
