@@ -1,5 +1,8 @@
 <script>
     import Comments from './Comments.svelte';
+    import Modal from "./Modal.svelte";
+    import Share from "./Share.svelte";
+    import {blur} from "svelte/transition";
 
     export let username;
     export let location;
@@ -7,6 +10,12 @@
     export let postComment;
     export let comments;
     export let avatar;
+
+    let isModal = false;
+
+    function toggleModal() {
+        isModal = !isModal;
+    }
 
 </script>
 <style>
@@ -123,6 +132,15 @@
 </style>
 
 <div class="Card">
+
+    {#if isModal}
+        <div transition:blur>
+            <Modal>
+                <Share on:click={toggleModal}/>
+            </Modal>
+
+        </div>
+    {/if}
     <div class="Card-container">
         <div class="Card-Header">
             <div class="Card-user">
@@ -146,7 +164,7 @@
         <div class="Card-icons">
             <div class="Card-icons-firsts">
                 <i class="fas fa-heart"></i>
-                <i class="fas fa-paper-plane"></i>
+                <i class="fas fa-paper-plane" on:click={toggleModal}></i>
             </div>
             <div class="Card-icons-second">
                 <i class="fas fa-bookmark"></i>
