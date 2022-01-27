@@ -3,6 +3,7 @@
     import Modal from "./Modal.svelte";
     import Share from "./Share.svelte";
     import {blur} from "svelte/transition";
+    import {likeCount} from "../store/store";
 
     export let username;
     export let location;
@@ -12,9 +13,20 @@
     export let avatar;
 
     let isModal = false;
+    let like = false;
+    let bookmark = false;
 
     function toggleModal() {
         isModal = !isModal;
+    }
+
+    function toggleLike(){
+        like = !like;
+        if(like) {
+            likeCount.update(n => n + 1);
+        } else {
+            likeCount.update(n => n - 1);
+        }
     }
 
 </script>
@@ -157,17 +169,21 @@
             </div>
         </div>
         <div class="Card-photo">
-            <figure>
+            <figure on:dblclick={toggleLike}>
                 <img src={photo} alt={username}>
             </figure>
         </div>
         <div class="Card-icons">
             <div class="Card-icons-firsts">
-                <i class="fas fa-heart"></i>
+                <i class="fas fa-heart"
+                   on:click={toggleLike}
+                class:active-like={like}></i>
                 <i class="fas fa-paper-plane" on:click={toggleModal}></i>
             </div>
             <div class="Card-icons-second">
-                <i class="fas fa-bookmark"></i>
+                <i class="fas fa-bookmark"
+                class:active-bookmark={bookmark}
+                on:click={() => {bookmark = !bookmark}}></i>
             </div>
         </div>
         <div class="Card-description">
