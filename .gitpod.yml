@@ -18,10 +18,10 @@ image:
 
 # exposed ports
 ports:
-  - name: DevServer
-    port: 5000
-    onOpen: notify
-    visibility: private
+  - port: 5000
+    onOpen: ignore
+  - port: 35729
+    onOpen: ignore
 
 # Configure the VS Code editor.
 vscode:
