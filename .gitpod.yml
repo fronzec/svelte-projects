@@ -5,10 +5,8 @@ tasks:
   - name: Dependencies
     init: |
       npm install -g eslint
-      cd ./pugstagram
-      npm install
-      npm run build
-      cd ..
+      cd ./pugstagram && npm install && npm run build && cd ..
+      cd ./hello-world && npm install && npm run build && cd ..
 
 image:
   file: .gitpod.Dockerfile
