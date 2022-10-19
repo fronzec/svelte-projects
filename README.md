@@ -1,1 +1,1 @@
-# 'Svelte' Projects
+# Public 'Svelte' Projects
