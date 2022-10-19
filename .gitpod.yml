@@ -26,7 +26,18 @@ ports:
 # Configure the VS Code editor.
 vscode:
   extensions:
-    - svelte.svelte-vscode
+    - svelte.svelte-vscode # Svelte for VS Code
+    - formulahendry.auto-close-tag # Auto Close Tag
+    - formulahendry.code-runner # Code Runner
+    - streetsidesoftware.code-spell-checker # Spelling Checker for Visual Studio Code
+    - mikestead.dotenv # DotENV
+    - heron.firefox-devtools-theme # Firefox Theme
+    - mhutchie.git-graph # Git Graph
+    - gitpod.gitpod-desktop # Gitpod
+    - vincaslt.highlight-matching-tag # Highlight Matching Tag
+    - oderwat.indent-rainbow # Indent-Rainbow
+    - k--kato.intellij-idea-keybindings # IntelliJ IDEA Key Bindings
+    - redhat.vscode-yaml # YAML
 
 # Define the integration between Gitpod and JetBrains IDEs.
 jetbrains:
