@@ -7,6 +7,7 @@ tasks:
       npm install -g eslint
       cd ./pugstagram && npm install && npm run build && cd ..
       cd ./hello-world && npm install && npm run build && cd ..
+      cd ./spring-batch-admin && npm install && npm run build && cd ..
 
 image:
   file: .gitpod.Dockerfile
@@ -17,6 +18,8 @@ image:
 # exposed ports
 ports:
   - port: 5000
+    onOpen: ignore
+  - port: 5173
     onOpen: ignore
   - port: 35729
     onOpen: ignore
