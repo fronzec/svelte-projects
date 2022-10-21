@@ -36,6 +36,7 @@ vscode:
     - oderwat.indent-rainbow # Indent-Rainbow
     - k--kato.intellij-idea-keybindings # IntelliJ IDEA Key Bindings
     - redhat.vscode-yaml # YAML
+    - WakaTime.vscode-wakatime # WakaTime
 
 # Define the integration between Gitpod and JetBrains IDEs.
 jetbrains:
@@ -57,5 +58,6 @@ jetbrains:
       - com.ultrahob.zerolength.plugin # Zero Width Characters locator
       - com.andrey4623.rainbowcsv # Rainbow CSV
       - dev.blachut.svelte.lang # Svelte
+      - com.wakatime.intellij.plugin # WakaTime
     prebuilds:
       version: stable
